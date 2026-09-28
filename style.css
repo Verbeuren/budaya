@@ -1,0 +1,1195 @@
+/* =========================================================
+   RESET & WARNA
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue: #35b8ed;
+  --deep-blue: #1686c0;
+  --orange: #f5a623;
+  --gold: #ffd15c;
+  --cream: #fff7df;
+  --green: #3bc66b;
+  --red: #ef5b58;
+  --brown: #8a4d24;
+}
+
+body {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: #dff6ff;
+  color: #47301f;
+}
+
+
+/* =========================================================
+   VIDEO BACKGROUND
+========================================================= */
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   UMUM
+========================================================= */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.game-shell {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+}
+
+.page.active {
+  display: block;
+}
+
+.hero,
+.map-screen,
+.detail-screen,
+.quiz-screen,
+.feedback-screen,
+.result-screen {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+
+  text-align: center;
+
+  margin-top: -35px;
+
+  z-index: 3;
+}
+
+.logo {
+  font-size: clamp(46px, 9vw, 92px);
+  font-weight: 900;
+
+  color: #ffd34e;
+
+  text-shadow:
+    5px 6px 0 #7e3e18,
+    -2px -2px 0 white;
+}
+
+.game-title {
+  font-size: clamp(28px, 5vw, 55px);
+
+  font-weight: 900;
+
+  color: white;
+
+  text-shadow: 3px 3px #19689b;
+}
+
+
+/* =========================================================
+   JUDUL KAYU
+========================================================= */
+
+.wood-title {
+  display: inline-block;
+
+  background: linear-gradient(
+    #b9793c,
+    #8e4d25
+  );
+
+  color: white;
+
+  padding: 13px 38px;
+
+  border-radius: 14px;
+
+  border: 4px solid #693718;
+
+  box-shadow: 0 5px 0 #633619;
+
+  font-size: clamp(22px, 3.5vw, 38px);
+
+  font-weight: 900;
+}
+
+.wood-title.small {
+  font-size: clamp(20px, 3vw, 32px);
+  padding: 9px 24px;
+}
+
+
+/* =========================================================
+   TEKS HOME
+========================================================= */
+
+.hero-content p {
+  margin: 25px 0;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  line-height: 1.5;
+
+  color: white;
+
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================================================
+   BUTTON UTAMA
+========================================================= */
+
+.main-btn {
+  background: linear-gradient(
+    #ffd55a,
+    #f3a31d
+  );
+
+  color: #6a3a13;
+
+  border: 4px solid #a85c18;
+
+  border-radius: 30px;
+
+  padding: 15px 45px;
+
+  font-size: 24px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 6px 0 #9c571c;
+
+  transition: 0.15s;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+}
+
+.main-btn.orange {
+  margin-top: 40px;
+}
+
+
+/* =========================================================
+   KARAKTER HOME
+========================================================= */
+
+.character {
+  position: absolute;
+
+  bottom: 5%;
+
+  font-size: clamp(
+    110px,
+    18vw,
+    190px
+  );
+
+  z-index: 3;
+
+  filter:
+    drop-shadow(
+      5px 8px 3px #376c5a
+    );
+}
+
+.boy {
+  left: 6%;
+}
+
+.girl {
+  right: 6%;
+}
+
+
+/* =========================================================
+   PETA
+========================================================= */
+
+.map-screen {
+  background-image:
+    url("assets/bg-peta-indonesia.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 28px 5%;
+}
+
+.topbar {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  z-index: 4;
+}
+
+.stars {
+  position: absolute;
+
+  right: 0;
+  top: 4px;
+
+  background: #126fa4;
+
+  color: white;
+
+  border-radius: 25px;
+
+  padding: 9px 18px;
+
+  font-weight: 900;
+}
+
+.subtitle {
+  text-align: center;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  margin: 15px 0;
+
+  position: relative;
+
+  z-index: 4;
+}
+
+
+/* =========================================================
+   BUTTON KEMBALI
+========================================================= */
+
+.icon-btn {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  border: 3px solid #8a4d24;
+
+  color: #8a4d24;
+
+  font-size: 28px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 3px 0 #75431f;
+}
+
+.back {
+  position: absolute;
+
+  left: 20px;
+  top: 20px;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   MAP PETUALANGAN
+========================================================= */
+
+.map {
+  height: calc(100vh - 190px);
+
+  min-height: 520px;
+
+  position: relative;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   PULAU
+========================================================= */
+
+.island {
+  position: absolute;
+
+  background: #5fbf5c;
+
+  border: 4px solid #318d4a;
+
+  transform: rotate(-12deg);
+
+  box-shadow:
+    inset 10px -10px #3d9c51;
+}
+
+.island1 {
+  width: 25%;
+  height: 55%;
+
+  left: 13%;
+  top: 16%;
+
+  border-radius:
+    48% 52% 45% 55%;
+}
+
+.island2 {
+  width: 30%;
+  height: 20%;
+
+  left: 32%;
+  top: 45%;
+
+  border-radius:
+    60% 40%;
+}
+
+.island3 {
+  width: 21%;
+  height: 45%;
+
+  right: 24%;
+  top: 18%;
+
+  border-radius:
+    40% 60%;
+}
+
+.island4 {
+  width: 23%;
+  height: 25%;
+
+  right: 3%;
+  top: 48%;
+
+  border-radius: 55%;
+}
+
+
+/* =========================================================
+   JALUR
+========================================================= */
+
+.route {
+  position: absolute;
+
+  left: 16%;
+  top: 48%;
+
+  width: 72%;
+  height: 10%;
+
+  border-top:
+    5px dashed white;
+
+  transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   LEVEL
+========================================================= */
+
+.level {
+  position: absolute;
+
+  width: 112px;
+  height: 112px;
+
+  border-radius: 50%;
+
+  background: #fff5c8;
+
+  border: 6px solid #f5a623;
+
+  box-shadow:
+    0 7px 0 #a96724;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #57341e;
+
+  z-index: 5;
+}
+
+.level .level-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.level .level-icon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================================
+   POSISI LEVEL
+========================================================= */
+
+.level1 {
+  left: 7%;
+  top: 23%;
+}
+
+.level2 {
+  left: 22%;
+  top: 57%;
+}
+
+.level3 {
+  left: 38%;
+  top: 69%;
+}
+
+.level4 {
+  left: 33%;
+  top: 30%;
+}
+
+.level5 {
+  left: 57%;
+  top: 48%;
+}
+
+.level6 {
+  right: 13%;
+  top: 29%;
+}
+
+.level7 {
+  right: 2%;
+  top: 60%;
+}
+
+
+/* =========================================================
+   DEKORASI PETA
+========================================================= */
+
+.sea-decoration {
+  position: absolute;
+
+  font-size: 45px;
+}
+
+.d1 {
+  left: 5%;
+  bottom: 10%;
+}
+
+.d2 {
+  right: 5%;
+  bottom: 5%;
+}
+
+.compass {
+  position: absolute;
+
+  left: 20px;
+  bottom: 20px;
+
+  color: white;
+
+  font-size: 40px;
+
+  text-align: center;
+
+  text-shadow:
+    2px 2px #126d8b;
+}
+
+.compass span {
+  font-size: 16px;
+}
+
+.map-note {
+  position: absolute;
+
+  right: 6%;
+  bottom: 12px;
+
+  background: #fff1bc;
+
+  padding: 10px 18px;
+
+  border-radius: 16px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   DETAIL LEVEL
+========================================================= */
+
+.detail-screen {
+  background: linear-gradient(
+    #3ec4ee,
+    #d6f4db
+  );
+
+  padding: 35px 5%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.detail-card {
+  width: min(700px, 94vw);
+
+  background: #fff7df;
+
+  border: 6px solid #8a4d24;
+
+  border-radius: 30px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 12px 0 #74421f;
+}
+
+
+/* =========================================================
+   FOTO UTAMA DAERAH
+========================================================= */
+
+.region-image {
+  width: 100%;
+  height: 300px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 0;
+
+  overflow: hidden;
+}
+
+.region-photo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+
+  border-radius: 18px;
+}
+
+
+/* =========================================================
+   JUDUL & DESKRIPSI
+========================================================= */
+
+.detail-card h1 {
+  color: #8a4d24;
+
+  font-size: 36px;
+
+  margin: 15px 0 8px;
+}
+
+.detail-card p {
+  line-height: 1.5;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   JUDUL BUDAYA KHAS
+========================================================= */
+
+.culture-title {
+  display: inline-block;
+
+  background: #9c4e22;
+
+  color: white;
+
+  padding: 8px 28px;
+
+  border-radius: 18px;
+
+  font-weight: 900;
+
+  margin: 15px 0 10px;
+}
+
+
+/* =========================================================
+   3 FOTO BUDAYA KHAS
+========================================================= */
+
+.culture-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  width: 100%;
+}
+
+.culture {
+  background: white;
+
+  border: 3px solid #e5c477;
+
+  border-radius: 15px;
+
+  padding: 8px 5px;
+
+  min-width: 0;
+  min-height: 140px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   FOTO BUDAYA
+========================================================= */
+
+.culture-photo {
+  width: 200px !important;
+  height: 150px !important;
+
+  max-width: 100%;
+
+  object-fit: contain;
+
+  display: block;
+
+  border-radius: 8px;
+
+  margin: 0 auto 7px;
+}
+
+
+/* NAMA BUDAYA */
+
+.culture span {
+  display: block;
+
+  font-size: 14px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-screen,
+.feedback-screen,
+.result-screen {
+  background:
+    linear-gradient(
+      #35b9ec,
+      #bfe9da
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 25px;
+}
+
+.quiz-card,
+.feedback-card,
+.result-card {
+  width: min(600px, 94vw);
+
+  background: #fff8e6;
+
+  border: 5px solid #8a4d24;
+
+  border-radius: 28px;
+
+  padding: 22px;
+
+  box-shadow:
+    0 10px 0 #75431f;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   HEADER QUIZ
+========================================================= */
+
+.quiz-head {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.quiz-head .wood-title {
+  margin: auto;
+}
+
+.counter {
+  background: #ffd45b;
+
+  border: 3px solid #a96820;
+
+  border-radius: 18px;
+
+  padding: 7px 12px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   PERTANYAAN
+========================================================= */
+
+.question {
+  font-size: 19px;
+
+  font-weight: bold;
+
+  margin: 10px;
+}
+
+.question-image {
+  height: 170px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      #81d8f1,
+      #73b85e
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 110px;
+
+  margin: 10px 0;
+
+  border: 4px solid #e2b65c;
+}
+
+
+/* =========================================================
+   JAWABAN
+========================================================= */
+
+.answers {
+  display: grid;
+
+  gap: 9px;
+}
+
+.answer {
+  padding: 12px;
+
+  border: 3px solid #d5b56b;
+
+  border-radius: 14px;
+
+  background: white;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  text-align: left;
+}
+
+.answer.selected {
+  background: #c8f3d1;
+
+  border-color: #36ad62;
+}
+
+.answer.correct {
+  background: #9be5ae;
+}
+
+.answer.wrong {
+  background: #ffc2c2;
+}
+
+
+/* =========================================================
+   TOMBOL PERIKSA
+========================================================= */
+
+.check-btn {
+  margin-top: 14px;
+
+  width: 100%;
+
+  background: #ffbd35;
+
+  border: 3px solid #a45a1c;
+
+  border-radius: 18px;
+
+  padding: 13px;
+
+  font-size: 18px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   FEEDBACK
+========================================================= */
+
+.feedback-card {
+  padding: 35px;
+}
+
+.feedback-icon {
+  font-size: 75px;
+}
+
+.feedback-card h1 {
+  font-size: 40px;
+
+  color: #28a956;
+}
+
+.feedback-image {
+  font-size: 110px;
+
+  margin: 15px;
+}
+
+.feedback-card .main-btn {
+  background: #38c96a;
+
+  color: white;
+
+  border-color: #238b45;
+}
+
+
+/* =========================================================
+   HASIL
+========================================================= */
+
+.result-card h1 {
+  font-size: 48px;
+
+  color: #f2a41f;
+}
+
+.confetti {
+  font-size: 30px;
+}
+
+.big-star {
+  font-size: 90px;
+}
+
+.score {
+  font-size: 42px;
+
+  font-weight: 900;
+}
+
+.stars-result {
+  font-size: 30px;
+
+  margin: 10px;
+}
+
+.award {
+  background: #fff0ad;
+
+  border: 3px solid #e2ad2c;
+
+  padding: 12px;
+
+  border-radius: 16px;
+
+  margin: 15px 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE - HP / TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .map-screen {
+    padding: 20px 3%;
+  }
+
+  .map {
+    height: calc(100vh - 170px);
+
+    min-height: 600px;
+  }
+
+
+  /* LEVEL */
+
+  .level {
+    width: 82px;
+    height: 82px;
+
+    border-width: 4px;
+  }
+
+  .level .level-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .level b {
+    font-size: 17px;
+  }
+
+  .level small {
+    font-size: 11px;
+  }
+
+
+  /* POSISI LEVEL */
+
+  .level1 {
+    left: 2%;
+    top: 20%;
+  }
+
+  .level2 {
+    left: 16%;
+    top: 48%;
+  }
+
+  .level3 {
+    left: 33%;
+    top: 69%;
+  }
+
+  .level4 {
+    left: 38%;
+    top: 13%;
+  }
+
+  .level5 {
+    left: 55%;
+    top: 45%;
+  }
+
+  .level6 {
+    right: 9%;
+    top: 25%;
+  }
+
+  .level7 {
+    right: 0;
+    top: 59%;
+  }
+
+
+  /* PETA */
+
+  .map-note {
+    display: none;
+  }
+
+  .stars {
+    right: 5px;
+
+    font-size: 13px;
+  }
+
+
+  /* =====================================================
+     3 FOTO BUDAYA DI HP
+  ===================================================== */
+
+  .culture-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 7px;
+  }
+
+  .culture {
+    min-height: 120px;
+
+    padding: 7px 3px;
+  }
+
+  .culture-photo {
+    width: 70px !important;
+    height: 60px !important;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    margin-bottom: 6px;
+  }
+
+  .culture span {
+    font-size: 11px;
+
+    line-height: 1.2;
+  }
+
+
+  /* KARAKTER */
+
+  .character {
+    font-size: 90px;
+  }
+
+
+  /* FOTO UTAMA */
+
+  .region-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 18px;
+  }
+}
