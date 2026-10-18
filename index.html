@@ -1,184 +1,449 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nusa Ceria - Jelajah Nusantara</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <div class="game-shell">
 
-    <!-- HOME -->
+    <!-- =====================================================
+         HOME
+    ====================================================== -->
     <section id="homePage" class="page active">
+
       <div class="hero">
 
-    <!-- VIDEO BACKGROUND -->
-    <video class="video-bg" autoplay muted loop playsinline>
-      <source src="assets/background-home.mp4" type="video/mp4">
-    </video>
+        <!-- Video Background -->
+        <video class="video-bg" autoplay muted loop playsinline>
+          <source src="assets/background-home.mp4" type="video/mp4">
+        </video>
 
-    <!-- LAPISAN GELAP TIPIS AGAR TEKS TERLIHAT -->
-    <div class="video-overlay"></div>
+        <!-- Lapisan gelap agar tulisan lebih terlihat -->
+        <div class="video-overlay"></div>
 
-    <div class="hero-content">
-      <button class="main-btn" onclick="showPage('mapPage')">
-        ▶ Mulai
-      </button>
-    </div>
+        <!-- Isi halaman home -->
+        <div class="hero-content">
 
-  </div>
-  </section>
+          <button
+            class="main-btn"
+            onclick="showPage('mapPage')">
+            ▶ Mulai
+          </button>
 
-    <!-- MAP -->
-   <!-- MAP -->
-<section id="mapPage" class="page">
-  <div class="map-screen">
-
-    <!-- Tombol kembali -->
-    <button class="icon-btn back" onclick="showPage('homePage')">
-      ←
-    </button>
-
-    <!-- Jumlah bintang -->
-    <div class="stars">
-      ⭐ <span id="starCount">0</span>
-    </div>
-
-    <!-- Area peta -->
-    <div class="map">
-
-      <!-- LEVEL 1 -->
-      <button class="level level1" onclick="openLevel(1)">
-        <span class="level-icon">
-        <img src="assets/sumatra.png" alt="budaya sumatra">
-        </span>
-        <b>1</b><b>
-        </small>Sumatra</small>
-      </button>
-
-      <!-- LEVEL 2 -->
-      <button class="level level2" onclick="openLevel(2)">
-        <span class="level-icon">
-        <img src="assets/jawa.png" alt="budaya jawa">
-        </span>
-        <b>2</b><b>
-        </small>Jawa</small>
-      </button>
-
-      <!-- LEVEL 3 -->
-      <button class="level level3" onclick="openLevel(3)">
-        <span class="level-icon">
-        <img src="assets/bali.png" alt="budaya Bali dan NTT">
-        </span>
-        <b>3</b><b>
-        </small>Bali & NTT</small>
-      </button>
-
-      <!-- LEVEL 4 -->
-      <button class="level level4" onclick="openLevel(4)">
-        <span class="level-icon">
-        <img src="assets/kalimantan.png" alt="budaya Kalimantan">
-        </span>
-        <b>4</b><b>
-        </small>Kalimantan</small>
-      </button>
-
-      <!-- LEVEL 5 -->
-      <button class="level level5" onclick="openLevel(5)">
-         <span class="level-icon">
-        <img src="assets/sulawesi.png" alt="budaya Sulawesi">
-        </span>
-        <b>5</b><b>
-        </small>Sulawesi</small>
-      </button>
-
-      <!-- LEVEL 6 -->
-      <button class="level level6" onclick="openLevel(6)">
-         <span class="level-icon">
-        <img src="assets/maluku.png" alt="budaya Maluku">
-        </span>
-        <b>6</b><b>
-        </small>Maluku</small>
-      </button>
-
-      <!-- LEVEL 7 -->
-      <button class="level level7" onclick="openLevel(7)">
-          <span class="level-icon">
-        <img src="assets/papua.png" alt="budaya Papua">
-        </span>
-        <b>4</b><b>
-        </small>Papua</small>
-      </button>
-
-    </div>
-
-  </div>
-</section>
-
-    <!-- LEVEL DETAIL -->
-    <section id="detailPage" class="page">
-      <div class="detail-screen">
-        <button class="icon-btn back" onclick="showPage('mapPage')">←</button>
-        <div class="detail-card">
-          <div class="region-image" id="regionImage">🏠</div>
-          <h1 id="regionTitle">Sumatera Barat</h1>
-          <p id="regionDesc"></p>
-          <div class="culture-title">Budaya Khas</div>
-          <div class="culture-grid" id="cultureGrid"></div>
-          <button class="main-btn orange" onclick="startQuiz()">Lanjut Game →</button>
         </div>
+
       </div>
+
     </section>
 
-    <!-- QUIZ -->
-    <section id="quizPage" class="page">
-      <div class="quiz-screen">
-        <div class="quiz-card">
-          <div class="quiz-head">
-            <button class="icon-btn" onclick="showPage('detailPage')">←</button>
-            <div class="wood-title small">Kuis</div>
-            <div class="counter" id="questionCounter">1/5</div>
+
+    <!-- =====================================================
+         MAP / PILIH LEVEL
+    ====================================================== -->
+    <section id="mapPage" class="page">
+
+      <div class="map-screen">
+
+        <!-- Tombol kembali -->
+        <button
+          class="icon-btn back"
+          onclick="showPage('homePage')">
+          ←
+        </button>
+
+
+        <!-- Jumlah bintang -->
+        <div class="stars">
+          ⭐ <span id="starCount">0</span>
+        </div>
+
+
+        <!-- Area Peta -->
+        <div class="map">
+
+          <!-- ================= LEVEL 1 ================= -->
+          <button
+            class="level level1"
+            onclick="openLevel(1)">
+
+            <span class="level-icon">
+              <img
+                src="assets/sumatra.png"
+                alt="Budaya Sumatra">
+            </span>
+
+            <span class="level-number">1</span>
+            <small>Sumatra</small>
+
+          </button>
+
+
+          <!-- ================= LEVEL 2 ================= -->
+          <button
+            class="level level2"
+            onclick="openLevel(2)">
+
+            <span class="level-icon">
+              <img
+                src="assets/jawa.png"
+                alt="Budaya Jawa">
+            </span>
+
+            <span class="level-number">2</span>
+            <small>Jawa</small>
+
+          </button>
+
+
+          <!-- ================= LEVEL 3 ================= -->
+          <button
+            class="level level3"
+            onclick="openLevel(3)">
+
+            <span class="level-icon">
+              <img
+                src="assets/bali.png"
+                alt="Budaya Bali dan NTT">
+            </span>
+
+            <span class="level-number">3</span>
+            <small>Bali &amp; NTT</small>
+
+          </button>
+
+
+          <!-- ================= LEVEL 4 ================= -->
+          <button
+            class="level level4"
+            onclick="openLevel(4)">
+
+            <span class="level-icon">
+              <img
+                src="assets/kalimantan.png"
+                alt="Budaya Kalimantan">
+            </span>
+
+            <span class="level-number">4</span>
+            <small>Kalimantan</small>
+
+          </button>
+
+
+          <!-- ================= LEVEL 5 ================= -->
+          <button
+            class="level level5"
+            onclick="openLevel(5)">
+
+            <span class="level-icon">
+              <img
+                src="assets/sulawesi.png"
+                alt="Budaya Sulawesi">
+            </span>
+
+            <span class="level-number">5</span>
+            <small>Sulawesi</small>
+
+          </button>
+
+
+          <!-- ================= LEVEL 6 ================= -->
+          <button
+            class="level level6"
+            onclick="openLevel(6)">
+
+            <span class="level-icon">
+              <img
+                src="assets/maluku.png"
+                alt="Budaya Maluku">
+            </span>
+
+            <span class="level-number">6</span>
+            <small>Maluku</small>
+
+          </button>
+
+
+          <!-- ================= LEVEL 7 ================= -->
+          <button
+            class="level level7"
+            onclick="openLevel(7)">
+
+            <span class="level-icon">
+              <img
+                src="assets/papua.png"
+                alt="Budaya Papua">
+            </span>
+
+            <span class="level-number">7</span>
+            <small>Papua</small>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LEVEL DETAIL
+    ====================================================== -->
+    <section id="detailPage" class="page">
+
+      <div class="detail-screen">
+
+        <!-- Tombol kembali -->
+        <button
+          class="icon-btn back"
+          onclick="showPage('mapPage')">
+          ←
+        </button>
+
+
+        <!-- Kartu detail daerah -->
+        <div class="detail-card">
+
+          <!-- Gambar wilayah -->
+          <div
+            class="region-image"
+            id="regionImage">
           </div>
 
-          <p class="question" id="questionText"></p>
-          <div class="question-image" id="questionImage">🦎</div>
-          <div class="answers" id="answers"></div>
-          <button class="check-btn" id="checkBtn" onclick="checkAnswer()">Periksa Jawaban</button>
+
+          <!-- Nama wilayah -->
+          <h1 id="regionTitle">
+            Sumatera Barat
+          </h1>
+
+
+          <!-- Deskripsi wilayah -->
+          <p id="regionDesc"></p>
+
+
+          <!-- Judul budaya -->
+          <div class="culture-title">
+            Budaya Khas
+          </div>
+
+
+          <!-- Daftar budaya -->
+          <div
+            class="culture-grid"
+            id="cultureGrid">
+          </div>
+
+
+          <!-- Tombol lanjut -->
+          <button
+            class="main-btn orange"
+            onclick="startQuiz()">
+            Lanjut Game →
+          </button>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- FEEDBACK -->
+
+    <!-- =====================================================
+         QUIZ
+    ====================================================== -->
+    <section id="quizPage" class="page">
+
+      <div class="quiz-screen">
+
+        <div class="quiz-card">
+
+          <!-- Header Kuis -->
+          <div class="quiz-head">
+
+            <!-- Tombol kembali -->
+            <button
+              class="icon-btn"
+              onclick="showPage('detailPage')">
+              ←
+            </button>
+
+
+            <!-- Judul -->
+            <div class="wood-title small">
+              Kuis
+            </div>
+
+
+            <!-- Nomor soal -->
+            <div
+              class="counter"
+              id="questionCounter">
+              1/5
+            </div>
+
+          </div>
+
+
+          <!-- Pertanyaan -->
+          <p
+            class="question"
+            id="questionText">
+          </p>
+
+
+          <!-- Gambar soal -->
+          <div
+            class="question-image"
+            id="questionImage">
+          </div>
+
+
+          <!-- Pilihan jawaban -->
+          <div
+            class="answers"
+            id="answers">
+          </div>
+
+
+          <!-- Tombol periksa -->
+          <button id="checkBtn" class="check-btn" onclick="checkAnswer()" type="button">
+  Periksa Jawaban
+</button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FEEDBACK
+    ====================================================== -->
     <section id="feedbackPage" class="page">
+
       <div class="feedback-screen">
+
         <div class="feedback-card">
-          <div id="feedbackIcon" class="feedback-icon">✓</div>
-          <h1 id="feedbackTitle">Hebat!</h1>
+
+          <!-- Icon benar / salah -->
+          <div
+            id="feedbackIcon"
+            class="feedback-icon">
+            ✓
+          </div>
+
+
+          <!-- Judul feedback -->
+          <h1 id="feedbackTitle">
+            Hebat!
+          </h1>
+
+
+          <!-- Teks feedback -->
           <p id="feedbackText"></p>
-          <div class="feedback-image" id="feedbackImage">🦎</div>
-          <button class="main-btn" onclick="nextQuestion()">Lanjut →</button>
+
+
+          <!-- Tombol lanjut -->
+          <button
+            class="main-btn"
+            onclick="nextQuestion()">
+            Lanjut →
+          </button>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- RESULT -->
+
+    <!-- =====================================================
+         HASIL KUIS
+    ====================================================== -->
     <section id="resultPage" class="page">
+
       <div class="result-screen">
+
         <div class="result-card">
-          <div class="confetti">🎉 ✨ 🎊</div>
-          <h1>Selamat!</h1>
-          <p>Kamu berhasil menyelesaikan kuis!</p>
-          <div class="big-star">⭐</div>
-          <div class="score" id="finalScore">5/5</div>
-          <div class="stars-result" id="resultStars">⭐⭐⭐⭐⭐</div>
-          <div class="award">🏆 <b id="awardText">Hebat sekali!</b></div>
-          <button class="main-btn" onclick="showPage('mapPage')">⌂ Kembali ke Peta</button>
+
+          <!-- Hiasan -->
+          <div class="confetti">
+
+          </div>
+
+
+          <!-- Judul -->
+          <h1>
+            Selamat!
+          </h1>
+
+
+          <!-- Keterangan -->
+          <p>
+            Kamu berhasil menyelesaikan kuis!
+          </p>
+
+
+          <!-- Bintang -->
+          <div class="big-star">
+            ⭐
+          </div>
+
+
+          <!-- Nilai -->
+          <div
+            class="score"
+            id="finalScore">
+            5/5
+          </div>
+
+
+          <!-- Bintang hasil -->
+          <div
+            class="stars-result"
+            id="resultStars">
+            ⭐⭐⭐⭐⭐
+          </div>
+
+
+          <!-- Penghargaan -->
+          <div class="award">
+            🏆
+            <b id="awardText">
+              Hebat sekali!
+            </b>
+          </div>
+
+
+          <!-- Kembali ke peta -->
+          <button
+            class="main-btn"
+            onclick="showPage('mapPage')">
+            Kembali ke Peta
+          </button>
+
         </div>
+
       </div>
+
     </section>
 
   </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
   <script src="script.js"></script>
+
 </body>
+
 </html>
